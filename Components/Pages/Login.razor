@@ -1,0 +1,13 @@
+﻿@page "/"
+@inject ILogger<Login> Logger
+
+<div>
+    <h1>
+        Hello Motherfucker
+    </h1>
+    <EditForm Model="model">
+        <InputText @bind-Value="model!.UserPassword" />
+        <button @onsubmit="Submit" > Submit </button>
+    </EditForm>
+</div>
+
