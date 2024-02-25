@@ -1,5 +1,4 @@
 ﻿@page "/"
-@inject ILogger<Login> Logger
 
 <div>
     <h1>
@@ -7,7 +6,7 @@
     </h1>
     <EditForm Model="model">
         <InputText @bind-Value="model!.UserPassword" />
-        <button @onsubmit="Submit" > Submit </button>
+        <button @onclick="Submit"> Submit </button>
     </EditForm>
 </div>
 
