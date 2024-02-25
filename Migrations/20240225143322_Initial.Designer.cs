@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRIS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240129052839_Initial")]
+    [Migration("20240225143322_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -21,6 +21,22 @@ namespace HRIS.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("HRIS.Data.AccessCode", b =>
+                {
+                    b.Property<DateOnly>("DateCreated")
+                        .HasColumnType("date");
+
+                    b.Property<string>("HandlerInitials")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TransactionCode")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.ToTable("AccessCodes");
+                });
 
             modelBuilder.Entity("HRIS.Data.ApplicationUser", b =>
                 {

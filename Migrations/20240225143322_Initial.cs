@@ -16,6 +16,19 @@ namespace HRIS.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "AccessCodes",
+                columns: table => new
+                {
+                    DateCreated = table.Column<DateOnly>(type: "date", nullable: false),
+                    HandlerInitials = table.Column<string>(type: "longtext", nullable: false),
+                    TransactionCode = table.Column<string>(type: "longtext", nullable: false)
+                },
+                constraints: table =>
+                {
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -208,6 +221,9 @@ namespace HRIS.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AccessCodes");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 

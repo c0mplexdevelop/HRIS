@@ -5,5 +5,8 @@ namespace HRIS.Data
 {
     public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
     {
+        public DbSet<AccessCode> AccessCodes { get; set; } = null!;
+
+      
     }
 }
