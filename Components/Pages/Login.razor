@@ -1,12 +1,23 @@
 ﻿@page "/"
 
-<div>
-    <h1>
-        Hello Motherfucker
-    </h1>
-    <EditForm Model="model">
-        <InputText @bind-Value="model!.UserPassword" />
-        <button @onclick="Submit"> Submit </button>
-    </EditForm>
+@layout LoginLayout
+
+<div class="w-max h-max">
+    <div class="centered-flex direction-column form-background w-max h-max centered-flex flex-end">
+        <h1 class="access-label">
+            Employee Access Code
+        </h1>
+
+        <div class="w-max h-33 centered-flex direction-column margin-0 padding-0 gap-2">
+            <EditForm Model="model" class="w-max h-max centered-flex direction-column margin-0 padding-0 gap-2">
+                <InputText class="code-box rounded-corners" @bind-Value="model!.UserPassword" />
+                <div class="submit-button-wrapper">
+                    <button class="gap-2 submit-button"> Submit </button>
+
+                </div>
+            </EditForm>
+        </div>
+        
+    </div>
 </div>
 

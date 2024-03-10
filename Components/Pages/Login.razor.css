@@ -1,1 +1,41 @@
-﻿
+﻿.access-label {
+	font-family: "Inter-Regular", Arial;
+	font-weight: 200;
+	font-size: 3rem;
+}
+
+.form-background {
+	background-color: #d9d9d9;
+}
+
+.code-box, ::deep .code-box{
+	width: 50%;
+	height: 36%;
+	background-color: #00000033;
+
+	text-align: center;
+}
+
+.submit-button-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: black;
+	height: 21%;
+	width: 23%;
+	border-radius: 0.5rem;
+}
+
+.submit-button {
+	background-color: #CBA0A0;
+	height: 99%;
+	width: 99%;
+	border-radius: 0.5rem;
+}
+
+.submit-button:active {
+	background-color: black;
+	color: white;
+	
+}
