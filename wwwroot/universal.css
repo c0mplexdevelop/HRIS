@@ -16,8 +16,44 @@
 	flex-direction: column;
 }
 
+.w-33 {
+	width: 33%;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+.w-66 {
+	width: 66%;
+}
+
 .w-max {
 	width: 100%;
+}
+
+.h-33 {
+	height: 33%;
+}
+
+.h-50 {
+	height: 50%;
+}
+
+.h-66 {
+	height: 66%;
+}
+
+.gap-0 {
+	gap: 0;
+}
+
+.gap-1 {
+	gap: 1rem;
+}
+
+.gap-2 {
+	gap: 2rem;
 }
 
 .h-max {
@@ -26,4 +62,12 @@
 
 .rounded-corners {
 	border-radius: 1rem;
+}
+
+.padding-0 {
+	padding: 0;
+}
+
+.margin-0 {
+	margin: 0;
 }
