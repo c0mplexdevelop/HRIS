@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.Extensions.Logging;
 using HRIS.Data;
+using HRIS.Data.Model;
 
 namespace HRIS.Components.Pages
 {
