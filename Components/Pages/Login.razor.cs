@@ -1,22 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HRIS.Components.Pages
+namespace HRIS.Components.Pages;
+
+public partial class Login
 {
-    public partial class Login
+    public class UserInput
     {
-        public class UserInput
-        {
-            [Required]
-            [DataType(DataType.Password)]
-            public string? UserPassword { get; set; }
-        }
+        [Required]
+        [DataType(DataType.Password)]
+        public string? UserPassword { get; set; }
+    }
 
-        public UserInput model = new UserInput();
-        
+    public required UserInput model { get; set; }
+    
 
-        public void Submit()
-        {
-            Logger.LogInformation($"{model!.UserPassword}");
-        }
+    public void Submit()
+    {
+        Logger.LogInformation($"{model!.UserPassword}");
     }
 }
+

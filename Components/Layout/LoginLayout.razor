@@ -1,7 +1,28 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="black-bg centered-flex h-max">
-    <div class="white-bg centered-flex direction-column login-box rounded-corners">
-        @Body
+
+<div class="container">
+    <div class="left-box">
+        <img src="Images/QCUPortal.png" alt="">
+    </div>
+    <div class="right-box">
+        <form class="w-full" action="#">
+            <div class="login-title">
+                <h2 class="login-header">Login</h2>
+                <p>Please enter your credentials to access your account.</p>
+            </div>
+            <div class="login-inputs">
+                <EditForm Model="Model" >
+                    <input @bind-value="Model.Username" type="text" name="" id="" class="input-size inp" placeholder="Username">
+                    <input @bind-value="Model.Password" type="password" name="" id="" class="input-size inp" placeholder="Password">
+                    <input @bind-value="Model.AccessCode" type="number" class="input-size inp-2" placeholder="Employment Access Code:">
+                </EditForm>
+                
+            </div>
+            <div class="button">
+                <button>Next</button>
+            </div>
+            
+        </form>
     </div>
 </div>
