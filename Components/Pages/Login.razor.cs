@@ -4,9 +4,11 @@ using Microsoft.Extensions.Logging;
 using HRIS.Data;
 using HRIS.Data.Model;
 
-namespace HRIS.Components.Pages
+namespace HRIS.Components.Pages;
+
+public partial class Login
 {
-    public partial class Login
+    public class UserInput
     {
 
         [Inject]
@@ -22,8 +24,8 @@ namespace HRIS.Components.Pages
             public string? UserPassword { get; set; }
         }
 
-        public UserInput model = new UserInput();
-        
+    public required UserInput model { get; set; }
+    
 
         public void Submit()
         {
@@ -50,3 +52,4 @@ namespace HRIS.Components.Pages
         }
     }
 }
+
