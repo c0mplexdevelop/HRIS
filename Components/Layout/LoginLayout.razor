@@ -12,10 +12,10 @@
                 <p>Please enter your credentials to access your account.</p>
             </div>
             <div class="login-inputs">
-                <EditForm Model="Model" >
+                <EditForm Model="@Model" class="edit-form" >
                     <input @bind-value="Model.Username" type="text" name="" id="" class="input-size inp" placeholder="Username">
                     <input @bind-value="Model.Password" type="password" name="" id="" class="input-size inp" placeholder="Password">
-                    <input @bind-value="Model.AccessCode" type="number" class="input-size inp-2" placeholder="Employment Access Code:">
+                    <input @bind-value="Model.AccessCode" type="text" class="input-size inp-2" placeholder="Employment Access Code:">
                 </EditForm>
                 
             </div>
