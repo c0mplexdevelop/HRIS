@@ -15,5 +15,10 @@ public partial class LoginLayout {
         public string AccessCode { get; set; }
     }
 
-    public required UserInput Model { get; set; }
+    public required UserInput Model = new UserInput {
+        Username = "",
+        Password = "",
+        AccessCode = ""
+    };
+
 }
