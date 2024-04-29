@@ -12,15 +12,31 @@
                 <p>Please enter your credentials to access your account.</p>
             </div>
             <div class="login-inputs">
-                <EditForm Model="@Model" class="edit-form" >
-                    <input @bind-value="Model.Username" type="text" name="" id="" class="input-size inp" placeholder="Username">
-                    <input @bind-value="Model.Password" type="password" name="" id="" class="input-size inp" placeholder="Password">
-                    <input @bind-value="Model.AccessCode" type="text" class="input-size inp-2" placeholder="Employment Access Code:">
+                <EditForm Model="@Model" class="edit-form" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+                    <DataAnnotationsValidator />
+                    <div class="w-full form-div">
+                        <input @bind-value="Model.Username" type="text" name="" id="" class="input-size inp" placeholder="Username"/>
+                        <ValidationMessage For="() => Model.Username" />
+                    </div>
+                    
+                    <div class="w-full form-div">
+                        <input @bind-value="Model.Password" type="password" name="" id="" class="input-size inp" placeholder="Password"/>
+                    </div>
+                    
+                    <div class="w-full form-div">
+                        <input @bind-value="Model.AccessCode" type="text" class="input-size inp-2" placeholder="Employment Access Code:"/>
+
+                    </div>
+
+
+                    
+
+
+                    <div class="button">
+                        <button>Next</button>
+                    </div>
                 </EditForm>
                 
-            </div>
-            <div class="button">
-                <button>Next</button>
             </div>
             
         </form>
