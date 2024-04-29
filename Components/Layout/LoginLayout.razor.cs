@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+using HRIS.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace HRIS.Components.Layout;
 
@@ -29,9 +31,20 @@ public partial class LoginLayout {
     [Inject]
     private ILogger<LoginLayout> Logger { get; set; }
 
+    [Inject]
+    private IDbContextFactory<ApplicationDbContext> contextFactory { get; set; }
+
     private void HandleValidSubmit(EditContext editContext) {
         Logger.LogInformation("Form submitted!");
         Logger.LogInformation($"Username: {Model.Username}");
+
+        using var context = contextFactory.CreateDbContext();
+
+        if(context.GetUser(Model.Username, Model.Password) is null) {
+            Logger.LogWarning("User not found!");
+        } else {
+            Logger.LogInformation("User found!");
+        }
     }
 
     private void HandleInvalidSubmit(EditContext editContext) {
