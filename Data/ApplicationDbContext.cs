@@ -12,6 +12,10 @@ namespace HRIS.Data
         {
             return UsersTable.Where(user => user.Id == inputUser.Id);
         }
+        
+        public IQueryable<User> GetUser(string username, string password) {
+            return UsersTable.Where(user => user.Username == username && user.Password == password);
+        }
 
 
     }
