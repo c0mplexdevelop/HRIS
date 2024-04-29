@@ -21,11 +21,12 @@
                     
                     <div class="w-full form-div">
                         <input @bind-value="Model.Password" type="password" name="" id="" class="input-size inp" placeholder="Password"/>
+                        <ValidationMessage For="() => Model.Password" />
                     </div>
                     
                     <div class="w-full form-div">
                         <input @bind-value="Model.AccessCode" type="text" class="input-size inp-2" placeholder="Employment Access Code:"/>
-
+                        <ValidationMessage For="() => Model.AccessCode" />
                     </div>
 
 
