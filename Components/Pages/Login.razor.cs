@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Components;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Extensions.Logging;
+using HRIS.Data;
 
 namespace HRIS.Components.Pages;
 
@@ -6,17 +9,12 @@ public partial class Login
 {
     public class UserInput
     {
-        [Required]
-        [DataType(DataType.Password)]
-        public string? UserPassword { get; set; }
-    }
 
-    public required UserInput model { get; set; }
-    
+        [Inject]
+        private ILogger<Login> Logger { get; set; }
 
-    public void Submit()
-    {
-        Logger.LogInformation($"{model!.UserPassword}");
+        [Inject]
+        private ApplicationDbContext DbContext { get; set; }
     }
 }
 
